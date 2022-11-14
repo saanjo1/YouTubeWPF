@@ -61,6 +61,8 @@
     <Compile Include="Components\YouTubeViewersListings.xaml.cs">
       <DependentUpon>YouTubeViewersListings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\YouTubeViewer.cs" />
+    <Compile Include="Stores\SelectedYouTubeViewerStore.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\YouTubeViewersDetailsViewModel.cs" />
     <Compile Include="ViewModels\YouTubeViewersListingItemViewModel.cs" />

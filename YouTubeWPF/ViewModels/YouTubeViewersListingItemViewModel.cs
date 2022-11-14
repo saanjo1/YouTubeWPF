@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using YouTubeWPF.Models;
 
 namespace YouTubeWPF.ViewModels
 {
     public class YouTubeViewersListingItemViewModel : ViewModelBase
     {
-        public string Username { get; }
+        public YouTubeViewer _youTubeViewer { get; }
+
+        public string Username => _youTubeViewer.Username;
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
 
-        public YouTubeViewersListingItemViewModel(string username)
+        public YouTubeViewersListingItemViewModel(YouTubeViewer youTubeViewer)
         {
-            Username = username;
+            _youTubeViewer = youTubeViewer;
         }
     }
 }
