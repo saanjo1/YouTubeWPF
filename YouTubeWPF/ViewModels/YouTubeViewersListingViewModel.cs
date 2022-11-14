@@ -30,7 +30,7 @@ namespace YouTubeWPF.ViewModels
                 _selectedYouTubeViewerListingItemViewModel = value;
                 OnPropertyChanged(nameof(SelectedYouTubeViewewrListingItemViewModel));
 
-                selectedYouTubeViewStore.SelectedYouTubeViewer = _selectedYouTubeViewerListingItemViewModel._youTubeViewer;
+                selectedYouTubeViewStore.SelectedYouTubeViewer = _selectedYouTubeViewerListingItemViewModel?._youTubeViewer;
             
             }
         }
