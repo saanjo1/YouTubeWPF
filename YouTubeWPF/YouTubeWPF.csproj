@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ModalControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModalControl.1.0.0\lib\net48\ModalControl.dll</HintPath>
+    </Reference>
+    <Reference Include="POSSectorDropDownMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\POSSectorDropDownMenu.1.0.0\lib\net48\POSSectorDropDownMenu.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -65,8 +71,13 @@
       <DependentUpon>YouTubeViewersListings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\YouTubeViewer.cs" />
+    <Compile Include="Stores\ModelNavigationStore.cs" />
     <Compile Include="Stores\SelectedYouTubeViewerStore.cs" />
+    <Compile Include="ViewModels\AddYouTubeViewerViewModel.cs" />
+    <Compile Include="ViewModels\EditYouTubeViewersViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\YouTubeViewerDetailsFormViewModel.cs" />
     <Compile Include="ViewModels\YouTubeViewersDetailsViewModel.cs" />
     <Compile Include="ViewModels\YouTubeViewersListingItemViewModel.cs" />
     <Compile Include="ViewModels\YouTubeViewersListingViewModel.cs" />
@@ -135,6 +146,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,12 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DropdownMenu\DropdownMenu.csproj">
-      <Project>{f7abe7f8-a939-4510-adc7-fbc1bbb095b7}</Project>
-      <Name>DropdownMenu</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
