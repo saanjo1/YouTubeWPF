@@ -11,15 +11,12 @@ namespace YouTubeWPF.ViewModels
 {
     public class YouTubeViewersListingViewModel : ViewModelBase
     {
-        private readonly ObservableCollection<YouTubeViewersListingItemViewModel> _youTubeVIewersListingItemViewModels;
+        private readonly ObservableCollection<YouTubeViewersListingItemViewModel> _youTubeViewersListingItemViewModels;
 
-        public IEnumerable<YouTubeViewersListingItemViewModel> YouTubeViewersListingItemViewModels => _youTubeVIewersListingItemViewModels;
+        public IEnumerable<YouTubeViewersListingItemViewModel> YouTubeViewersListingItemViewModels => _youTubeViewersListingItemViewModels;
 
 
         private readonly SelectedYouTubeViewerStore selectedYouTubeViewStore;
-
-
-
 
         private YouTubeViewersListingItemViewModel _selectedYouTubeViewerListingItemViewModel;
 
@@ -41,12 +38,12 @@ namespace YouTubeWPF.ViewModels
         public YouTubeViewersListingViewModel(SelectedYouTubeViewerStore _selectedYouTubeViewerStore)
         {
             selectedYouTubeViewStore = _selectedYouTubeViewerStore;
-            _youTubeVIewersListingItemViewModels = new ObservableCollection<YouTubeViewersListingItemViewModel>();
+            _youTubeViewersListingItemViewModels = new ObservableCollection<YouTubeViewersListingItemViewModel>();
 
-            _youTubeVIewersListingItemViewModels = new ObservableCollection<YouTubeViewersListingItemViewModel>();
-            _youTubeVIewersListingItemViewModels.Add(new YouTubeViewersListingItemViewModel(new YouTubeViewer("Sanjin", true, true)));
-            _youTubeVIewersListingItemViewModels.Add(new YouTubeViewersListingItemViewModel(new YouTubeViewer("Mirza", false, false)));
-            _youTubeVIewersListingItemViewModels.Add(new YouTubeViewersListingItemViewModel(new YouTubeViewer("Amina", false, true)));
+            _youTubeViewersListingItemViewModels = new ObservableCollection<YouTubeViewersListingItemViewModel>();
+            _youTubeViewersListingItemViewModels.Add(new YouTubeViewersListingItemViewModel(new YouTubeViewer("Sanjin", true, true)));
+            _youTubeViewersListingItemViewModels.Add(new YouTubeViewersListingItemViewModel(new YouTubeViewer("Mirza", false, false)));
+            _youTubeViewersListingItemViewModels.Add(new YouTubeViewersListingItemViewModel(new YouTubeViewer("Amina", false, true)));
         }
     }
 }

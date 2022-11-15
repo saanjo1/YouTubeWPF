@@ -27,7 +27,7 @@ namespace YouTubeWPF.ViewModels
         }
         protected override void Dispose()
         {
-            selectedYouTubeViewerStore.SelectedYouTubeViewerChanged += _selectedYouTubeViewerStore_SelectedYouTubeViewerChanged;
+            selectedYouTubeViewerStore.SelectedYouTubeViewerChanged -= _selectedYouTubeViewerStore_SelectedYouTubeViewerChanged;
             base.Dispose();
         }
 

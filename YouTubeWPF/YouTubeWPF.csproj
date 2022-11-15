@@ -58,6 +58,9 @@
     <Compile Include="Components\YouTubeViewersDetails.xaml.cs">
       <DependentUpon>YouTubeViewersDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\YouTubeViewersDetailsForm.xaml.cs">
+      <DependentUpon>YouTubeViewersDetailsForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\YouTubeViewersListings.xaml.cs">
       <DependentUpon>YouTubeViewersListings.xaml</DependentUpon>
     </Compile>
@@ -68,10 +71,20 @@
     <Compile Include="ViewModels\YouTubeViewersListingItemViewModel.cs" />
     <Compile Include="ViewModels\YouTubeViewersListingViewModel.cs" />
     <Compile Include="ViewModels\YouTubeViewersViewModel.cs" />
+    <Compile Include="Views\AddYouTubeViewerView.xaml.cs">
+      <DependentUpon>AddYouTubeViewerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditYouTubeViewerView.xaml.cs">
+      <DependentUpon>EditYouTubeViewerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\YouTubeViewersView.xaml.cs">
       <DependentUpon>YouTubeViewersView.xaml</DependentUpon>
     </Compile>
     <Page Include="Components\YouTubeViewersDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\YouTubeViewersDetailsForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,6 +104,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddYouTubeViewerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditYouTubeViewerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\YouTubeViewersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
