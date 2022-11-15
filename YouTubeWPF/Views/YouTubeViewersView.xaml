@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid>
+        <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
@@ -32,8 +32,8 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <components:YouTubeViewersListings Grid.Column="0" DataContext="{Binding YouTubeViewersListingViewModel }"/>
-            <components:YouTubeViewersDetails Grid.Column="1" DataContext="{Binding YouTubeViewersDetailsViewModel}" Margin="20 0 0 0"/>
+            <components:YouTubeViewersListings Padding="10" Grid.Column="0" DataContext="{Binding YouTubeViewersListingViewModel }"/>
+            <components:YouTubeViewersDetails Padding="10" Grid.Column="1" DataContext="{Binding YouTubeViewersDetailsViewModel}" Margin="20 0 0 0"/>
 
         </Grid>
     </Grid>

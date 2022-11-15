@@ -18,7 +18,7 @@
             <views:EditYouTubeViewerView/>
         </DataTemplate>
     </Window.Resources>
-    <Grid Margin="5">
+    <Grid>
 
         <modalcontrol:Modal Panel.ZIndex="1" IsOpen="{Binding IsModalOpen}">
             <ContentControl Margin="25" Content="{Binding CurrentModalViewModel}"/>

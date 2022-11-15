@@ -22,8 +22,6 @@ namespace YouTubeWPF.ViewModels
             YouTubeViewersViewModel = youTubeViewersViewModel;
 
             _modelNavigationStore.CurrentViewModelChanged += _modelNavigationStore_CurrentViewModelChanged;
-
-            _modelNavigationStore.CurrentViewModel = new AddYouTubeViewerViewModel();
         }
         protected override void Dispose()
         {

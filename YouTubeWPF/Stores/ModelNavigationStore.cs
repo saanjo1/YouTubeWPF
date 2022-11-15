@@ -22,6 +22,11 @@ namespace YouTubeWPF.Stores
 
         public bool IsOpen => CurrentViewModel != null;
 
+        public void Close()
+        {
+            CurrentViewModel = null;
+        }
+
         public event Action CurrentViewModelChanged;
 
     }

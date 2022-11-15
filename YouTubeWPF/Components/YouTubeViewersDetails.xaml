@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:YouTubeWPF.Components"
+             xmlns:local="clr-namespace:YouTubeWPF.Components" xmlns:viewmodels="clr-namespace:YouTubeWPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:YouTubeViewersDetailsViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid> 
@@ -48,7 +48,7 @@
 
                         <TextBlock Grid.Column="0"
                        FontSize="16"
-                       Text="{Binding Username}"/>
+                       Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
 
                     </Grid>
 
