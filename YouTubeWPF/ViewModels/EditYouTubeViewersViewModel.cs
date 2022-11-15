@@ -18,6 +18,7 @@ namespace YouTubeWPF.ViewModels
 
         public EditYouTubeViewersViewModel(YouTubeViewer youtubeviewer, ModelNavigationStore model)
         {
+            _modelNavigationStore = model;
             ICommand cancelCommand = new CloseModalCommand(_modelNavigationStore);
             YouTubeViewerDetailsFormViewModel = new YouTubeViewerDetailsFormViewModel(null, cancelCommand)
             {

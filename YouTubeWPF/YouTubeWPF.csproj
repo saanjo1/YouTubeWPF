@@ -38,8 +38,8 @@
     <Reference Include="ModalControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ModalControl.1.0.0\lib\net48\ModalControl.dll</HintPath>
     </Reference>
-    <Reference Include="POSSectorDropDownMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\POSSectorDropDownMenu.1.0.0\lib\net48\POSSectorDropDownMenu.dll</HintPath>
+    <Reference Include="POS-DropDown, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\POS-DropDown.1.0.0\lib\net48\POS-DropDown.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -71,6 +71,9 @@
     <Compile Include="Components\YouTubeViewersDetailsForm.xaml.cs">
       <DependentUpon>YouTubeViewersDetailsForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\YouTubeViewersListingItem.xaml.cs">
+      <DependentUpon>YouTubeViewersListingItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\YouTubeViewersListings.xaml.cs">
       <DependentUpon>YouTubeViewersListings.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\YouTubeViewersDetailsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\YouTubeViewersListingItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
