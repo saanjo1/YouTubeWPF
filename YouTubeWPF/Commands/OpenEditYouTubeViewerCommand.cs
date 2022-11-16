@@ -14,17 +14,22 @@ namespace YouTubeWPF.Commands
     {
 
         private readonly ModelNavigationStore _modelNavigationStore;
-        private readonly YouTubeViewer _youTubeViewer;
+        private YouTubeViewersListingItemViewModel youTubeViewersListingItemViewModel;
+        private YouTubeViewersStore youtubeViewersStore;
 
-        public OpenEditYouTubeViewerCommand(ModelNavigationStore modelNavigationStore, YouTubeViewer youTubeViewer)
+
+        public OpenEditYouTubeViewerCommand(YouTubeViewersListingItemViewModel youTubeViewersListingItemViewModel, YouTubeViewersStore youtubeViewersStore, ModelNavigationStore modelNavigationStore)
         {
-            _modelNavigationStore = modelNavigationStore;
-            _youTubeViewer = youTubeViewer;
+            this.youTubeViewersListingItemViewModel = youTubeViewersListingItemViewModel;
+            this.youtubeViewersStore = youtubeViewersStore;
+            this._modelNavigationStore = modelNavigationStore;
         }
 
         public override void Execute(object parameter)
         {
-            EditYouTubeViewersViewModel editYouTubeViewersViewModel = new EditYouTubeViewersViewModel(_youTubeViewer, _modelNavigationStore);
+            YouTubeViewer _youTubeViewer = youTubeViewersListingItemViewModel._youTubeViewer;
+
+            EditYouTubeViewersViewModel editYouTubeViewersViewModel = new EditYouTubeViewersViewModel(_youTubeViewer, youtubeViewersStore, _modelNavigationStore);
             _modelNavigationStore.CurrentViewModel = editYouTubeViewersViewModel;
         }
     }

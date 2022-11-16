@@ -61,10 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AsyncCommandBase.cs" />
     <Compile Include="Commands\CloseModalCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\OpenAddYouTubeViewerCommand.cs" />
     <Compile Include="Commands\OpenEditYouTubeViewerCommand.cs" />
+    <Compile Include="Commands\SubmitEditCommand.cs" />
+    <Compile Include="Commands\SubmitAddCommand.cs" />
     <Compile Include="Components\YouTubeViewersDetails.xaml.cs">
       <DependentUpon>YouTubeViewersDetails.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,7 @@
     <Compile Include="Models\YouTubeViewer.cs" />
     <Compile Include="Stores\ModelNavigationStore.cs" />
     <Compile Include="Stores\SelectedYouTubeViewerStore.cs" />
+    <Compile Include="Stores\YouTubeViewersStore.cs" />
     <Compile Include="ViewModels\AddYouTubeViewerViewModel.cs" />
     <Compile Include="ViewModels\EditYouTubeViewersViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

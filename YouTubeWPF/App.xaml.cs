@@ -16,17 +16,19 @@ namespace YouTubeWPF
     public partial class App : Application
     {
         private readonly ModelNavigationStore _modelNavigationStore;
+        private readonly YouTubeViewersStore _youTubeViewersStore;
         private readonly SelectedYouTubeViewerStore _selectedYouTubeViewerStore;
 
         public App()
         {
-            _selectedYouTubeViewerStore = new SelectedYouTubeViewerStore();
+            _youTubeViewersStore = new YouTubeViewersStore();
+            _selectedYouTubeViewerStore = new SelectedYouTubeViewerStore(_youTubeViewersStore);
             _modelNavigationStore = new ModelNavigationStore();
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            YouTubeViewersViewModel youTubeViewersViewModel = new YouTubeViewersViewModel(_selectedYouTubeViewerStore, _modelNavigationStore);
+            YouTubeViewersViewModel youTubeViewersViewModel = new YouTubeViewersViewModel(_selectedYouTubeViewerStore, _modelNavigationStore, _youTubeViewersStore);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_modelNavigationStore, youTubeViewersViewModel)

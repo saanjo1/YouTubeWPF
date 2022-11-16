@@ -32,8 +32,7 @@
                                         <ControlTemplate TargetType="Button">
                                             <Border Background="{TemplateBinding Background}" 
                                                                               Padding="{TemplateBinding Padding}"
-                                                                              Margin="{TemplateBinding Margin}"
-                                                                                        >
+                                                                              Margin="{TemplateBinding Margin}">
                                                 <ContentPresenter/>
                                             </Border>
                                         </ControlTemplate>
