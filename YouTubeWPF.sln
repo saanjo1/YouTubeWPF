@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.2.32616.157
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeWPF", "YouTubeWPF\YouTubeWPF.csproj", "{34FDEF0E-9578-4179-B543-FBF1BB642D3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeWPF.Web", "YouTubeWPF\YouTubeWPF.Web.csproj", "{34FDEF0E-9578-4179-B543-FBF1BB642D3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeWPF.EntityFramework", "YouTubeWPF.EntityFramework\YouTubeWPF.EntityFramework.csproj", "{199A6426-84DD-48E5-B89A-DE57470CFE8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeWPF.Domain", "YouTubeWPF.Domain\YouTubeWPF.Domain.csproj", "{770EF9CC-7E56-40AE-966B-7326500DD981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{34FDEF0E-9578-4179-B543-FBF1BB642D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34FDEF0E-9578-4179-B543-FBF1BB642D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34FDEF0E-9578-4179-B543-FBF1BB642D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199A6426-84DD-48E5-B89A-DE57470CFE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199A6426-84DD-48E5-B89A-DE57470CFE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199A6426-84DD-48E5-B89A-DE57470CFE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199A6426-84DD-48E5-B89A-DE57470CFE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{770EF9CC-7E56-40AE-966B-7326500DD981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770EF9CC-7E56-40AE-966B-7326500DD981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770EF9CC-7E56-40AE-966B-7326500DD981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770EF9CC-7E56-40AE-966B-7326500DD981}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using YouTubeWPF.Commands;
-using YouTubeWPF.Models;
+using YouTubeWPF.Domain.Models;
 using YouTubeWPF.Stores;
 
 namespace YouTubeWPF.ViewModels
