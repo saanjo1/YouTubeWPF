@@ -13,6 +13,12 @@ namespace YouTubeWPF.Stores
     {
         public event Action<YouTubeViewer> YouTubeViewerAdded;
         public event Action<YouTubeViewer> YouTubeViewerUpdated;
+        public event Action<Guid> YouTubeViewersDeleted;
+        public event Action YouTubeViewersLoaded;
+
+        private readonly List<YouTubeViewer> _youTubeViewers;
+        public IEnumerable<YouTubeViewer> YouTubeViewers => _youTubeViewers;
+
 
         private readonly IGetAllYouTubeViewersQuery _getAllYouTubeViewersQuery;
         private readonly ICreateYouTubeViewerCommand _createYouTubeViewerCommand;
@@ -28,11 +34,26 @@ namespace YouTubeWPF.Stores
             _createYouTubeViewerCommand = createYouTubeViewerCommand;
             _updateYouTubeViewerCommand = updateYouTubeViewerCommand;
             _deleteYouTubeViewerCommand = deleteYouTubeViewerCommand;
+
+            _youTubeViewers = new List<YouTubeViewer>();
+        }
+
+        public async Task Load()
+        {
+            IEnumerable<YouTubeViewer> youTubeViewers = await _getAllYouTubeViewersQuery.Execute();
+
+            _youTubeViewers.Clear();
+
+            _youTubeViewers.AddRange(youTubeViewers);
+
+            YouTubeViewersLoaded?.Invoke();
         }
 
         public async Task Add(YouTubeViewer youTubeViewer)
         {
             await _createYouTubeViewerCommand.Execute(youTubeViewer);
+
+            _youTubeViewers.Add(youTubeViewer);
 
             YouTubeViewerAdded?.Invoke(youTubeViewer);
         }
@@ -41,7 +62,29 @@ namespace YouTubeWPF.Stores
         {
             await _updateYouTubeViewerCommand.Execute(youTubeViewer);
 
+            int currentIndex = _youTubeViewers.FindIndex(y => y.Id == youTubeViewer.Id);
+
+            if(currentIndex != -1)
+            {
+                _youTubeViewers[currentIndex] = youTubeViewer;
+            }
+            else
+            {
+                _youTubeViewers.Add(youTubeViewer);
+            }
+
             YouTubeViewerUpdated?.Invoke(youTubeViewer);
+        }
+
+        public async Task Delete(Guid id)
+        {
+            await _deleteYouTubeViewerCommand.Execute(id);
+
+            _youTubeViewers.RemoveAll(y=>y.Id == id);
+
+            YouTubeViewersDeleted?.Invoke(id);
+
+            
         }
     }
 }

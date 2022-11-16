@@ -74,6 +74,8 @@
     <Compile Include="Commands\AsyncCommandBase.cs" />
     <Compile Include="Commands\CloseModalCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\DeleteYouTubeViewersCommand.cs" />
+    <Compile Include="Commands\LoadYouTubeViewersCommand.cs" />
     <Compile Include="Commands\OpenAddYouTubeViewerCommand.cs" />
     <Compile Include="Commands\OpenEditYouTubeViewerCommand.cs" />
     <Compile Include="Commands\SubmitEditCommand.cs" />

@@ -24,6 +24,7 @@ namespace YouTubeWPF.ViewModels
             _youTubeViewer = youTubeViewer;
 
             EditCommand = new OpenEditYouTubeViewerCommand(this, youtubeViewersStore, modelNavigationStore);
+            DeleteCommand = new DeleteYouTubeViewersCommand(this, youtubeViewersStore);
         }
      
         public void Update(YouTubeViewer obj)
