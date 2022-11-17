@@ -81,8 +81,8 @@
     <Compile Include="Commands\LoadYouTubeViewersCommand.cs" />
     <Compile Include="Commands\OpenAddYouTubeViewerCommand.cs" />
     <Compile Include="Commands\OpenEditYouTubeViewerCommand.cs" />
-    <Compile Include="Commands\SubmitEditCommand.cs" />
-    <Compile Include="Commands\SubmitAddCommand.cs" />
+    <Compile Include="Commands\EditYouTubeViewerCommand.cs" />
+    <Compile Include="Commands\AddYouTubeViewerCommand.cs" />
     <Compile Include="Components\YouTubeViewersDetails.xaml.cs">
       <DependentUpon>YouTubeViewersDetails.xaml</DependentUpon>
     </Compile>

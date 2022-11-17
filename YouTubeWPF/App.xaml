@@ -10,7 +10,11 @@
             <Style TargetType="TextBlock" x:Key="PageHeader">
                 <Setter Property="FontSize" Value="32"/>
             </Style>
-            
+
+            <Style TargetType="TextBlock" x:Key="ErrorMessage">
+                <Setter Property="Foreground" Value="Red"/>
+            </Style>
+
 
             <Style TargetType="Button">
                 <Setter Property="Foreground" Value="White"/>

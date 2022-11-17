@@ -27,6 +27,7 @@ namespace YouTubeWPF.Commands
             YouTubeViewer _youTubeViewer = youTubeViewersListingItemViewModel._youTubeViewer;
 
             youTubeViewersListingItemViewModel.IsDeleting = true;
+            youTubeViewersListingItemViewModel.ErrorMessage = null;
 
             try
             {
@@ -35,7 +36,7 @@ namespace YouTubeWPF.Commands
             }
             catch (Exception)
             {
-
+                youTubeViewersListingItemViewModel.ErrorMessage = "Failed to delete an existing YouTube viewer. Try again.";
             }
             finally
             {

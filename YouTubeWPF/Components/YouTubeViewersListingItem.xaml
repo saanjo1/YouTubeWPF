@@ -7,6 +7,9 @@
              xmlns:dropdownmenu="clr-namespace:DropdownMenu;assembly=POS-DropDown" xmlns:loadingspinnercontrol="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinner"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
     
     <Border Padding="10 0 0 0 " TextBlock.FontSize="16">
         <Grid>
@@ -15,8 +18,14 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Text="{Binding Username}"/>
-
+            <StackPanel Grid.Column="0">
+                <TextBlock Grid.Column="0" Text="{Binding Username}"/>
+                <TextBlock Margin="0 5 0 0"
+                           FontSize="10"
+                           Style="{StaticResource ErrorMessage}"
+                           Text="{Binding ErrorMessage}"
+                           Visibility="{Binding HasErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </StackPanel>
             <Grid Grid.Column="1" Margin="10 0 0 0">
                 <Grid>
                     <Grid.Style>

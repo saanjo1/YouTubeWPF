@@ -9,14 +9,14 @@ using YouTubeWPF.ViewModels;
 
 namespace YouTubeWPF.Commands
 {
-    public class SubmitEditCommand : AsyncCommandBase
+    public class EditYouTubeViewerCommand : AsyncCommandBase
     {
         private readonly ModelNavigationStore _modelNavigationStore;
         private readonly YouTubeViewersStore _youTubeViewersStore;
         private readonly Guid _youTubeViewerId;
         private readonly EditYouTubeViewersViewModel _editYouTubeViewersViewModel;
 
-        public SubmitEditCommand(EditYouTubeViewersViewModel editYouTubeViewersViewModel, ModelNavigationStore modelNavigationStore, YouTubeViewersStore youTubeViewersStore, Guid youTubeViewerId)
+        public EditYouTubeViewerCommand(EditYouTubeViewersViewModel editYouTubeViewersViewModel, ModelNavigationStore modelNavigationStore, YouTubeViewersStore youTubeViewersStore, Guid youTubeViewerId)
         {
             _modelNavigationStore = modelNavigationStore;
             _youTubeViewersStore = youTubeViewersStore;
@@ -38,6 +38,7 @@ namespace YouTubeWPF.Commands
             //Edit and submit to database
             var formViewModel = _editYouTubeViewersViewModel.YouTubeViewerDetailsFormViewModel;
 
+            formViewModel.ErrorMessage = null;
             formViewModel.IsSubmitting = true;
 
 
@@ -52,7 +53,11 @@ namespace YouTubeWPF.Commands
                 await _youTubeViewersStore.Update(youTubeViewer);
                 _modelNavigationStore.Close();
             }
-            catch (Exception) { }
+            catch (Exception) {
+
+                formViewModel.ErrorMessage = "Failed to edit existing YouTube viewer. Please try again.";
+            
+            }
             finally
             {
                 formViewModel.IsSubmitting = false;

@@ -24,6 +24,20 @@ namespace YouTubeWPF.ViewModels
             set { _IsDeleting = value; OnPropertyChanged(nameof(IsDeleting)); }
         }
 
+        private string _ErrorMessage;
+
+        public string ErrorMessage
+        {
+            get { return _ErrorMessage; }
+            set
+            {
+                _ErrorMessage = value;
+                OnPropertyChanged(nameof(HasErrorMessage));
+                OnPropertyChanged(nameof(ErrorMessage));
+            }
+        }
+
+        public bool HasErrorMessage => !string.IsNullOrEmpty(ErrorMessage);
 
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }

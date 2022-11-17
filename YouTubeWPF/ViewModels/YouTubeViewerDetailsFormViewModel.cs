@@ -58,11 +58,24 @@ namespace YouTubeWPF.ViewModels
 
         public bool CanSubmit => !string.IsNullOrEmpty(Username);
 
+
+        private string _ErrorMessage;
+
+        public string ErrorMessage
+        {
+            get { return _ErrorMessage; }
+            set
+            {
+                _ErrorMessage = value;
+                OnPropertyChanged(nameof(HasErrorMessage));
+                OnPropertyChanged(nameof(ErrorMessage));
+            }
+        }
+
+        public bool HasErrorMessage => !string.IsNullOrEmpty(ErrorMessage);
+
+
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
-
-
-
-
     }
 }

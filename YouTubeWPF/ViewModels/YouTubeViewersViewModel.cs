@@ -25,8 +25,18 @@ namespace YouTubeWPF.ViewModels
             }
         }
 
+        private string _ErrorMessage;
 
+        public string ErrorMessage
+        {
+            get { return _ErrorMessage; }
+            set { _ErrorMessage = value;
+                OnPropertyChanged(nameof(HasErrorMessage));
+                OnPropertyChanged(nameof(ErrorMessage));
+            }
+        }
 
+        public bool HasErrorMessage => !string.IsNullOrEmpty(ErrorMessage);
 
         public ICommand AddYouTubeViewersCommand { get; }
         public ICommand _LoadYouTubeViewersCommand { get; }

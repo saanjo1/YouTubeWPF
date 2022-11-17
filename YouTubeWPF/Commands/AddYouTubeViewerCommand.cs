@@ -9,13 +9,13 @@ using YouTubeWPF.ViewModels;
 
 namespace YouTubeWPF.Commands
 {
-    public class SubmitAddCommand : AsyncCommandBase
+    public class AddYouTubeViewerCommand : AsyncCommandBase
     {
         private readonly AddYouTubeViewerViewModel _addYouTubeViewerViewModel;
         private readonly ModelNavigationStore _modelNavigationStore;
         private readonly YouTubeViewersStore _youTubeViewersStore;
 
-        public SubmitAddCommand(AddYouTubeViewerViewModel addYouTubeViewerViewModel, ModelNavigationStore modelNavigationStore, YouTubeViewersStore youTubeViewersStore)
+        public AddYouTubeViewerCommand(AddYouTubeViewerViewModel addYouTubeViewerViewModel, ModelNavigationStore modelNavigationStore, YouTubeViewersStore youTubeViewersStore)
         {
             _addYouTubeViewerViewModel = addYouTubeViewerViewModel;
             _modelNavigationStore = modelNavigationStore;
@@ -37,6 +37,7 @@ namespace YouTubeWPF.Commands
            var formViewModel = _addYouTubeViewerViewModel.YouTubeViewerDetailsFormViewModel;
 
             formViewModel.IsSubmitting = true;
+            formViewModel.ErrorMessage = null;
 
             YouTubeViewer youTubeViewer = new YouTubeViewer(
                 Guid.NewGuid(),
@@ -50,7 +51,11 @@ namespace YouTubeWPF.Commands
                 _modelNavigationStore.Close();
 
             }
-            catch (Exception) { }
+            catch (Exception) {
+
+                formViewModel.ErrorMessage = "Failed to add a new YouTube Viewer. Please try again in a while.";
+            
+            }
             finally
             {
                 formViewModel.IsSubmitting = false;

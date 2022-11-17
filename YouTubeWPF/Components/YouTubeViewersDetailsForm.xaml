@@ -6,9 +6,13 @@
              xmlns:local="clr-namespace:YouTubeWPF.Components" xmlns:loadingspinnercontrol="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinner"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
@@ -75,8 +79,13 @@
                 <loadingspinnercontrol:LoadingSpinner Diameter="25" Thickness="2" IsLoading="{Binding IsSubmitting}"/>
 
             </WrapPanel>
-            
-            
+
+            <TextBlock Grid.Row="2" 
+                       Margin="0 15 0 0"
+                       Style="{StaticResource ErrorMessage}"
+                       Text="{Binding ErrorMessage}"
+                       Visibility="{Binding HasErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
         </Grid>
     </Grid>
 </UserControl>

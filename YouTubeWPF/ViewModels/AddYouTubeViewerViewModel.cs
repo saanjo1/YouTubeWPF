@@ -16,7 +16,7 @@ namespace YouTubeWPF.ViewModels
         public AddYouTubeViewerViewModel(ModelNavigationStore modelNavigationStore, YouTubeViewersStore _youTubeViewersStore)
         {
             ICommand cancelCommand = new CloseModalCommand(modelNavigationStore);
-            ICommand submitCommand = new SubmitAddCommand(this, modelNavigationStore, _youTubeViewersStore);
+            ICommand submitCommand = new AddYouTubeViewerCommand(this, modelNavigationStore, _youTubeViewersStore);
             YouTubeViewerDetailsFormViewModel = new YouTubeViewerDetailsFormViewModel(submitCommand, cancelCommand);
         }
     }
