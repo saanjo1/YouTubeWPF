@@ -30,5 +30,9 @@ namespace YouTubeWPF.Components
             dropdown.IsOpen = false;
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
