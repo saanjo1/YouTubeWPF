@@ -26,6 +26,8 @@ namespace YouTubeWPF.Commands
         {
             YouTubeViewer _youTubeViewer = youTubeViewersListingItemViewModel._youTubeViewer;
 
+            youTubeViewersListingItemViewModel.IsDeleting = true;
+
             try
             {
                 await youtubeViewersStore.Delete(_youTubeViewer.Id);
@@ -33,6 +35,11 @@ namespace YouTubeWPF.Commands
             }
             catch (Exception)
             {
+
+            }
+            finally
+            {
+                youTubeViewersListingItemViewModel.IsDeleting = false;
 
             }
 

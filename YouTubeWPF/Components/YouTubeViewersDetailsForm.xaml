@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:YouTubeWPF.Components"
+             xmlns:local="clr-namespace:YouTubeWPF.Components" xmlns:loadingspinnercontrol="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinner"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -61,15 +61,18 @@
             </Grid>
 
             <WrapPanel Grid.Row="1" Margin="0 30 0 0">
-                <Button Margin="0 0 5 0"
+                <Button Margin="0 5 5 0"
                         Content="Submit" 
                         IsEnabled="{Binding CanSubmit}"
                         Command="{Binding SubmitCommand}"/>
                 
                 <Button 
+                    Margin="0 5 0 0 "
                     Content="Cancel" 
                     Style="{StaticResource buttonSecondary}"
                     Command="{Binding CancelCommand}"/>
+
+                <loadingspinnercontrol:LoadingSpinner Diameter="25" Thickness="2" IsLoading="{Binding IsSubmitting}"/>
 
             </WrapPanel>
             

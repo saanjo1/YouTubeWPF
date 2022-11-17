@@ -9,6 +9,12 @@ namespace YouTubeWPF.ViewModels
 {
     public class YouTubeViewerDetailsFormViewModel : ViewModelBase
     {
+        public YouTubeViewerDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand)
+        {
+            SubmitCommand = submitCommand;
+            CancelCommand = cancelCommand;
+        }
+
         private string _username;
 
         public string Username
@@ -32,18 +38,21 @@ namespace YouTubeWPF.ViewModels
         }
 
         private bool _isMember;
-
-        public YouTubeViewerDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand)
-        {
-            SubmitCommand = submitCommand;
-            CancelCommand = cancelCommand;
-        }
-
         public bool IsMember
         {
             get { return _isMember; }
             set { _isMember = value; 
                 OnPropertyChanged(nameof(IsMember));
+            }
+        }
+        
+        private bool _IsSubmitting;
+        public bool IsSubmitting
+        {
+            get { return _IsSubmitting; }
+            set {
+                _IsSubmitting = value; 
+                OnPropertyChanged(nameof(IsSubmitting));
             }
         }
 

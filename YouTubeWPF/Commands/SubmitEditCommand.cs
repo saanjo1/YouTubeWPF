@@ -36,8 +36,10 @@ namespace YouTubeWPF.Commands
         public override async Task ExecuteAsync(object parameter)
         {
             //Edit and submit to database
-            //Add to database
             var formViewModel = _editYouTubeViewersViewModel.YouTubeViewerDetailsFormViewModel;
+
+            formViewModel.IsSubmitting = true;
+
 
             YouTubeViewer youTubeViewer = new YouTubeViewer(
                 _youTubeViewerId,
@@ -48,9 +50,13 @@ namespace YouTubeWPF.Commands
             try
             {
                 await _youTubeViewersStore.Update(youTubeViewer);
+                _modelNavigationStore.Close();
             }
             catch (Exception) { }
-            _modelNavigationStore.Close();
+            finally
+            {
+                formViewModel.IsSubmitting = false;
+            }
         }
     }
     }

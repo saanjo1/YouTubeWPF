@@ -21,7 +21,7 @@ namespace YouTubeWPF.ViewModels
             get { return _IsLoading; }
             set { 
                 _IsLoading = value;
-                OnPropertyChanged(nameof(_IsLoading));
+                OnPropertyChanged(nameof(IsLoading));
             }
         }
 

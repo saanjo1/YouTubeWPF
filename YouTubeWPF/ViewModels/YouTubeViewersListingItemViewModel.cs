@@ -15,6 +15,16 @@ namespace YouTubeWPF.ViewModels
 
         public YouTubeViewer _youTubeViewer { get; private set; }
         public string Username => _youTubeViewer.Username;
+
+        private bool _IsDeleting;
+
+        public bool IsDeleting
+        {
+            get { return _IsDeleting; }
+            set { _IsDeleting = value; OnPropertyChanged(nameof(IsDeleting)); }
+        }
+
+
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
 
