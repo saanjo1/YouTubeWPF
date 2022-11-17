@@ -4,20 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YouTubeWPF.Stores;
+using YouTubeWPF.ViewModels;
 
 namespace YouTubeWPF.Commands
 {
     public class LoadYouTubeViewersCommand : AsyncCommandBase
     {
+        private readonly YouTubeViewersViewModel _youTubeViewersViewModel;
         private readonly YouTubeViewersStore _youTubeViewersStore;
 
-        public LoadYouTubeViewersCommand(YouTubeViewersStore youTubeViewersStore)
+        public LoadYouTubeViewersCommand(YouTubeViewersViewModel youTubeViewersViewModel, YouTubeViewersStore youTubeViewersStore)
         {
+            _youTubeViewersViewModel = youTubeViewersViewModel;
             _youTubeViewersStore = youTubeViewersStore;
         }
 
         public override async Task ExecuteAsync(object parameter)
         {
+            _youTubeViewersViewModel.IsLoading = true;
+
             try
             {
               await _youTubeViewersStore.Load();
@@ -27,6 +32,10 @@ namespace YouTubeWPF.Commands
             {
 
                 throw;
+            }
+            finally
+            {
+                _youTubeViewersViewModel.IsLoading = false;
             }
         }
     }

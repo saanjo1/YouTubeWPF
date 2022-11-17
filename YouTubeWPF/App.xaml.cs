@@ -50,7 +50,7 @@ namespace YouTubeWPF
             }
 
 
-            YouTubeViewersViewModel youTubeViewersViewModel = new YouTubeViewersViewModel(_selectedYouTubeViewerStore, _modelNavigationStore, _youTubeViewersStore);
+            YouTubeViewersViewModel youTubeViewersViewModel = YouTubeViewersViewModel.LoadViewModel(_selectedYouTubeViewerStore, _modelNavigationStore, _youTubeViewersStore);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_modelNavigationStore, youTubeViewersViewModel)
