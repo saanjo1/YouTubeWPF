@@ -21,7 +21,6 @@ namespace YouTubeWPF.EntityFramework.Commands
         {
             using (YouTubeViewersDbContext context = _contextFactory.Create())
             {
-                throw new Exception();
                 await Task.Delay(2000);
                 YouTubeViewerDto youTubeViewerDto = new YouTubeViewerDto()
                 {
