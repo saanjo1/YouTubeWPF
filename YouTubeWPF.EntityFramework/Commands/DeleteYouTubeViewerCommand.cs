@@ -26,6 +26,7 @@ namespace YouTubeWPF.EntityFramework.Commands
                     Id = Id
                 };
 
+                context.YouTubeViewers.Attach(youTubeViewerDto);
                 context.YouTubeViewers.Remove(youTubeViewerDto);
                 await context.SaveChangesAsync();
             }

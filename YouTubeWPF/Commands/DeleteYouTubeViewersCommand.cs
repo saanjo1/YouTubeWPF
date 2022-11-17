@@ -34,7 +34,6 @@ namespace YouTubeWPF.Commands
             catch (Exception)
             {
 
-                throw;
             }
 
         }

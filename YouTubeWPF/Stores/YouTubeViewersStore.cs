@@ -80,11 +80,9 @@ namespace YouTubeWPF.Stores
         {
             await _deleteYouTubeViewerCommand.Execute(id);
 
-            _youTubeViewers.RemoveAll(y=>y.Id == id);
+            _youTubeViewers.RemoveAll(x=>x.Id == id);
 
             YouTubeViewersDeleted?.Invoke(id);
-
-            
         }
     }
 }
