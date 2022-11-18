@@ -48,7 +48,7 @@
 
                         <TextBlock Grid.Column="0"
                        FontSize="16"
-                       Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                       Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap"/>
 
                     </Grid>
 

@@ -22,17 +22,16 @@ namespace YouTubeWPF.ViewModels
         private readonly ModelNavigationStore _modelNavigationStore;
         private readonly YouTubeViewersStore _youtubeViewersStore;
 
-        private YouTubeViewersListingItemViewModel _selectedYouTubeViewerListingItemViewModel;
 
         public YouTubeViewersListingItemViewModel SelectedYouTubeViewewrListingItemViewModel
         {
-            get { return _selectedYouTubeViewerListingItemViewModel; }
-            set { 
-                _selectedYouTubeViewerListingItemViewModel = value;
-                OnPropertyChanged(nameof(SelectedYouTubeViewewrListingItemViewModel));
+            get {
 
-                selectedYouTubeViewStore.SelectedYouTubeViewer = _selectedYouTubeViewerListingItemViewModel?._youTubeViewer;
-            
+                return _youTubeViewersListingItemViewModels.FirstOrDefault(x => x._youTubeViewer?.Id == selectedYouTubeViewStore.SelectedYouTubeViewer?.Id);
+                       
+                    }
+            set {
+                selectedYouTubeViewStore.SelectedYouTubeViewer = value?._youTubeViewer;
             }
         }
 
@@ -44,6 +43,8 @@ namespace YouTubeWPF.ViewModels
             _youtubeViewersStore = youTubeViewersStore;
             _modelNavigationStore = modelNavigationStore;
 
+
+
             _youTubeViewersListingItemViewModels = new ObservableCollection<YouTubeViewersListingItemViewModel>();
 
             _youtubeViewersStore.YouTubeViewerAdded += _youtubeViewersStore_YouTubeViewerAdded;
@@ -51,7 +52,16 @@ namespace YouTubeWPF.ViewModels
             _youtubeViewersStore.YouTubeViewersLoaded += _youtubeViewersStore_YouTubeViewersLoaded;
             _youtubeViewersStore.YouTubeViewersDeleted += _youtubeViewersStore_YouTubeViewersDeleted;
 
+            _youTubeViewersListingItemViewModels.CollectionChanged += _youTubeViewersListingItemViewModels_CollectionChanged;
+
         }
+
+        private void _youTubeViewersListingItemViewModels_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged(nameof(SelectedYouTubeViewewrListingItemViewModel));
+        }
+
+      
 
         private void _youtubeViewersStore_YouTubeViewersDeleted(Guid obj)
         {
@@ -96,6 +106,7 @@ namespace YouTubeWPF.ViewModels
             _youtubeViewersStore.YouTubeViewerUpdated -= _youtubeViewersStore_YouTubeViewerUpdated;
             _youtubeViewersStore.YouTubeViewersLoaded -= _youtubeViewersStore_YouTubeViewersLoaded; 
             _youtubeViewersStore.YouTubeViewersDeleted -= _youtubeViewersStore_YouTubeViewersDeleted;
+
 
 
             base.Dispose();

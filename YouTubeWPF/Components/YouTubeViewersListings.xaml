@@ -18,7 +18,9 @@
                 <Border x:Name="border"
                         Background="White"
                         CornerRadius="5"/>
-                <ListView BorderThickness="0" SelectedItem="{Binding SelectedYouTubeViewewrListingItemViewModel}"
+                <ListView
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    BorderThickness="0" SelectedItem="{Binding SelectedYouTubeViewewrListingItemViewModel}"
                           ItemsSource="{Binding YouTubeViewersListingItemViewModels}">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
